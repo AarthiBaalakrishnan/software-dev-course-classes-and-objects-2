@@ -12,10 +12,21 @@ public class BetterStudentManager {
 
     public void addStudent(String name, double grade) {
         // This method should add a new student to the list of students
+        Student student = new Student(name, grade);
+        students.add(student);
+
     }
 
     public void removeStudent(String name) {
         // This method should remove the student with the given name from the list of students
+
+
+        for(Student stud:students){
+            if(stud.name.equals(name))
+                students.remove(stud);
+        }
+
+
     }
 
     public String getStudentList() {
@@ -29,6 +40,15 @@ public class BetterStudentManager {
         // looping through the list of students
         //
         // Replace the following line with your implementation
-        return null;
+        String result;
+        for(Student stud:students){
+
+            result=stud.name +"\t"+ stud.grade;
+
+            System.out.println(result);
+        }
+        return "";
+
+
     }
 }
